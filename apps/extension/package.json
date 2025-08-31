@@ -1,0 +1,21 @@
+{
+  "name": "@brain/extension",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Plasmo browser extension used to capture user input and send to backend (scaffold)",
+  "scripts": {
+    "dev": "plasmo dev",
+    "build": "plasmo build",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "eslint": "^9.34.0",
+    "plasmo": "^0.90.5",
+    "typescript": "^5.9.2"
+  }
+}

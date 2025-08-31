@@ -1,0 +1,16 @@
+{
+  "name": "@brain/embeddings",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Embeddings provider interface (OpenAI or local) with a simple stub implementation",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "echo \"No tests\"",
+    "docker:build": "docker build -t brain/embeddings:local ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@brain/scraping",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Web scraping utilities: fetch + readability/OG parser",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "crawl": "node dist/crawl.js",
+    "docker:build": "docker build -t brain/scraping:local ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}

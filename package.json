@@ -1,0 +1,40 @@
+{
+  "name": "brain",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo for brAIn services",
+  "packageManager": "pnpm@10.15.0",
+  "scripts": {
+    "bootstrap": "pnpm install",
+    "dev": "pnpm -r --parallel --filter \"./apps/*\" --filter \"!./apps/extension\" run dev",
+    "dev:ext": "pnpm -C apps/extension run dev",
+    "dev:api": "pnpm --filter @brain/api dev",
+    "dev:admin": "pnpm --filter @brain/admin dev",
+    "dev:worker": "pnpm --filter @brain/worker dev",
+    "build": "pnpm -w -r run build",
+    "start:api": "pnpm --filter @brain/api start",
+    "start:admin": "pnpm --filter @brain/admin start",
+    "start:worker": "pnpm --filter @brain/worker start",
+    "docker:build": "pnpm -w -r -P --parallel run docker:build",
+    "docker:compose:up": "docker compose -f deploy/docker-compose.yaml up --build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .ts,.js",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "eslint": "^9.34.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "turbo": "^2.5.6",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {},
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "typescript"
+      ]
+    }
+  }
+}

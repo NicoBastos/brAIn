@@ -1,0 +1,23 @@
+{
+  "name": "@brain/mailer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MJML → HTML templates + renderer for transactional emails",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "render": "node dist/render.js",
+    "docker:build": "docker build -t brain/mailer:local ."
+  },
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.879.0",
+    "@sendgrid/mail": "^8.1.5",
+    "dotenv": "^17.2.1",
+    "mjml": "^4.15.3",
+    "nodemailer": "^7.0.6",
+    "postmark": "^4.0.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}

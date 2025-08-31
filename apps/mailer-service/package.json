@@ -1,0 +1,24 @@
+{
+  "name": "@brain/mailer-service",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Service responsible for scheduled email sends (weekly/monthly). Can be run as a standalone service or scheduled via worker.",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "docker:build": "docker build -t brain/mailer-service:local .",
+    "lint": "eslint . --ext .ts,.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^7.0.6"
+  },
+  "devDependencies": {
+    "eslint": "^9.34.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}

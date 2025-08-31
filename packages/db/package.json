@@ -1,0 +1,21 @@
+{
+  "name": "@brain/db",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Prisma schema + client for brAIn (Postgres-ready, SQLite fallback)",
+  "main": "index.js",
+  "scripts": {
+    "prisma:generate": "prisma generate --schema=prisma/schema.prisma",
+    "migrate:dev": "prisma migrate dev --schema=prisma/schema.prisma",
+    "studio": "prisma studio --schema=prisma/schema.prisma",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.15.0",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "prisma": "^6.15.0",
+    "typescript": "^5.9.2"
+  }
+}

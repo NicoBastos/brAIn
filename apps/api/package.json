@@ -1,0 +1,28 @@
+{
+  "name": "@brain/api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "HTTP API service (framework configurable via env)",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "nodemon --watch src --ext ts --exec ts-node src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "docker:build": "docker build -t brain/api:local .",
+    "lint": "eslint . --ext .ts,.js"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.18",
+    "dotenv": "^17.2.1",
+    "fastify": "^5.5.0",
+    "pino": "^9.9.0",
+    "undici": "^7.15.0",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "eslint": "^9.34.0",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}

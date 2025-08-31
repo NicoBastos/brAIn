@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install pnpm
+        run: corepack enable && corepack prepare pnpm@latest --activate
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build
+        run: pnpm -w -r run build
+      - name: Lint
+        run: pnpm -w -r run lint || true

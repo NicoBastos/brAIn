@@ -1,0 +1,16 @@
+{
+  "name": "@brain/models",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Offline training utilities and model artifact handling",
+  "main": "dist/index.js",
+  "scripts": {
+    "train": "node scripts/train.js",
+    "build": "tsc -p tsconfig.json",
+    "docker:build": "docker build -t brain/models:local ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}
