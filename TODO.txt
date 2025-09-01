@@ -1,0 +1,3 @@
+- create DO droplet and set up postgress DB on it
+- connect it to prisma
+- start doing user account sign-in sign-up

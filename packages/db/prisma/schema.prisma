@@ -3,7 +3,11 @@ generator client {
 }
 
 datasource db {
-  // Default: Postgres. Set DATABASE_URL in env to a Postgres URL (postgresql://user:pass@host:port/db)
+  // Default: Postgres. Set DATABASE_URL in env to a Postgres URL.
+  // For Supabase, copy the connection string from your Supabase project settings and set it as DATABASE_URL.
+  // Example (note the sslmode=require query param which is required for TLS):
+  //   postgresql://postgres:YOUR_PASSWORD@db.<project>.supabase.co:5432/postgres?sslmode=require
+  // Prisma will read the connection from env("DATABASE_URL"). Ensure the URL includes ?sslmode=require.
   // For a local SQLite dev fallback, replace provider with "sqlite" and DATABASE_URL with "file:./dev.db"
   provider = "postgresql"
   url      = env("DATABASE_URL")
