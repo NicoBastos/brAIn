@@ -3,10 +3,8 @@
 const fs = require('fs');
 const net = require('net');
 const path = require('path');
-
 // Load env from repo root .env
 require('dotenv').config({ path: path.resolve(process.cwd(), '.env') });
-
 const { createTunnel } = require('tunnel-ssh');
 const { PrismaClient } = require('@prisma/client');
 
