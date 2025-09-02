@@ -35,3 +35,6 @@ docker-compose.override.yml
 
 # Misc
 *.log
+
+packages/db/prisma
+packages/db/chrome
