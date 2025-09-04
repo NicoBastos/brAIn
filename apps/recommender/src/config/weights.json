@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "neverOpened": 3,
+  "freshForgotten": 2,
+  "timeFit": 2,
+  "frequentSource": 2,
+  "bridge": 1,
+  "duplicatePenalty": -2,
+  "sameDomainPenalty": -1
+}

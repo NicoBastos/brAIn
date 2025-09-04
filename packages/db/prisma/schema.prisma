@@ -5,16 +5,16 @@ generator client {
 }
 generator zod {
   provider       = "prisma-zod-generator"
-  output         = "./src/zod"   // wherever you want them emitted
+  output         = "../../../types/"   // wherever you want them emitted
   relationModel  = true          // optional: generate relation schemas
   // you can also tune: createInputTypes = true, updateInputTypes = true, etc.
 }
-generator erd {
-  // let Prisma spawn the binary directly from this package
-  provider = "prisma-erd-generator"
-  output   = "./erd/phtos.svg"
-  mmdcPath = "./node_modules/.bin"
-}
+// generator erd {
+//   // let Prisma spawn the binary directly from this package
+//   provider = "prisma-erd-generator"
+//   output   = "./erd/phtos.svg"
+//   mmdcPath = "./node_modules/.bin"
+// }
 
 datasource db {
   provider          = "postgresql"
@@ -22,7 +22,11 @@ datasource db {
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
   
 }
-
+generator fake {
+  provider = "prisma-generator-fake-data"
+  // optional: default is "./prisma/fake-data.ts" (relative to the prisma folder)
+  // output   = "./fake-data.ts"
+}
 
 /////////////////////////////
 // Auth.js (NextAuth) models
